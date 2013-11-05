@@ -20,11 +20,34 @@ install() {
   mkdir $HOME/soft && cd $HOME/soft
   mkdir -p $HOME/soft/logs
 
+  
+  # Define log folder and files
+
   logDir="$HOME/soft/logs"
 
   systemLog="$logDir/system.log"
   bashLog="$logDir/bash.log"
   javaLog="$logDir/java.log"
+  bamtoolsLog="$logDir/bamtools.log"
+  bedtoolsLog="$logDir/bedtools.log"
+  bowtieLog="$logDir/bowtie.log"
+  tophatLog="$logDir/tophat.log"
+  bwaLog="$logDir/bwa.log"
+  cufflinksLog="$logDir/cufflinks.log"
+  samtoolsLog="$logDir/samtools.log"
+  exonerateLog="$logDir/exonerate.log"
+  fastqcLog="$logDir/fastqc.log"
+  gatkLog="$logDir/gatk.log"
+  gmapLog="$logDir/gmap.log"
+  igvLog="$logDir/igv.log"
+  igvToolsLog="$logDir/igvTools.log"
+  lastLog="$logDir/last.log"
+  picardLog="$logDir/picard.log"
+  stampyLog="$logDir/stampy.log"
+  tagdustLog="$logDir/tagdust.log"
+  vcftoolsLog="$logDir/vcftools.log"
+  gemtoolsLog="$logDir/gemtools.log"
+  fluxLog="$logDir/flux.log"
 
   
   # Install missing packages
@@ -237,7 +260,7 @@ install() {
   printf '\nexport PATH=$HOME/soft/vcftools_0.1.11/bin:$PATH\n' >> ~/.bashrc
 
 
-  # Install GEM
+  # Install GEMtools
 
   log "Install GEMtools"
   cd ~/soft
@@ -246,7 +269,7 @@ install() {
   printf '\nexport PATH=$HOME/gemtools-1.6.2-core2/bin:$PATH\n' >> ~/.bashrc
 
 
-  # Install FLUX
+  # Install Flux Capacitor
 
   log "Install Flux Capacitor"
   cd ~/soft
