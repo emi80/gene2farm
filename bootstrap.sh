@@ -9,44 +9,51 @@
 log() {
     msg=$1
     date=`date`
-    printf "$date - $msg" > /dev/stderr
+    printf "$date - $msg"
 }
 
 install() {
 
+  # Create installation folders
+
+  log "Create installation folders"
+  mkdir ~/soft && cd ~/soft
+  mkdir -p ~/soft/logs
+
+  logDir="~/soft/logs"
+
+  systemLog="$logDir/system.log"
+  bashLog="$logDir/bash.log"
+  javaLog="$logDir/java.log"
+
+  
   # Install missing packages
 
   log "Install missing packages"
-  sudo apt-get update --fix-missing
-  sudo apt-get install -y vim cmake make g++ git unzip libncurses5-dev libncursesw5-dev wget curl python-software-properties
-
-
-  # Create software folder
-
-  log "Create software folder"
-  mkdir ~/soft && cd ~/soft
+  sudo apt-get update --fix-missing &> $systemLog
+  sudo apt-get install -y vim cmake make g++ git unzip libncurses5-dev libncursesw5-dev wget curl python-software-properties &> $systemLog
 
 
   # Update bash to fix the direxpand issue
 
   log "Update bash to fix the direxpand issue"
   cd ~/soft
-  git clone git://git.sv.gnu.org/bash.git
+  git clone git://git.sv.gnu.org/bash.git &> $bashLog
   cd bash
-  ./configure
-  make
-  sudo make install
+  ./configure &> $bashLog
+  make &> $bashLog
+  sudo make install &> $bashLog
   printf '\nshopt -s direxpand\n' >> ~/.bashrc
 
 
   # Install Oracle JRE
 
   log "Install Oracle JRE"
-  sudo add-apt-repository -y ppa:webupd8team/java
-  sudo apt-get update
+  sudo add-apt-repository -y ppa:webupd8team/java &> $javaLog
+  sudo apt-get update &> $javaLog
   echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
-  echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections 
-  sudo apt-get install -y oracle-java7-installer
+  echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
+  sudo apt-get install -y oracle-java7-installer &> $javaLog
 
 
   # Install BAMtools
@@ -253,12 +260,9 @@ install() {
 # Exit if already bootstrapped.
 test -f /etc/bootstrapped && exit
 
-# set log file
-logFile="bootstrap.log"
-
 export -f install
 export -f log
-su vagrant -c "install > \$HOME/$logFile"
+su vagrant -c "install"
 
 # Mark as bootstrapped
 sudo sh -c "date > /etc/bootstrapped"
