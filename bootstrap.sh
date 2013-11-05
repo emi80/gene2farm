@@ -11,7 +11,7 @@ install() {
   # Install missing packages
 
   sudo apt-get update --fix-missing
-  sudo apt-get install -y vim cmake make g++ git unzip libncurses5-dev libncursesw5-dev wget curl
+  sudo apt-get install -y vim cmake make g++ git unzip libncurses5-dev libncursesw5-dev wget curl python-software-properties
 
 
   # Create software folder
@@ -30,10 +30,9 @@ install() {
 
   # Install Oracle JRE
 
-  sudo apt-get purge openjdk*
-  sudo add-apt-repository ppa:webupd8team/java
+  sudo add-apt-repository -y ppa:webupd8team/java
   sudo apt-get update
-  sudo apt-get install oracle-java7-installer
+  sudo apt-get install -y oracle-java7-installer
 
 
   # Install BAMtools
