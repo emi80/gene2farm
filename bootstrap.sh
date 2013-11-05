@@ -33,6 +33,7 @@ install() {
   cd ~/soft
   git clone git://git.sv.gnu.org/bash.git
   cd bash
+  ./configure
   make
   sudo make install
   printf '\nshopt -s direxpand\n' >> ~/.bashrc
