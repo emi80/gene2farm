@@ -17,10 +17,10 @@ install() {
   # Create installation folders
 
   log "Create installation folders"
-  mkdir ~/soft && cd ~/soft
-  mkdir -p ~/soft/logs
+  mkdir $HOME/soft && cd $HOME/soft
+  mkdir -p $HOME/soft/logs
 
-  logDir="~/soft/logs"
+  logDir="$HOME/soft/logs"
 
   systemLog="$logDir/system.log"
   bashLog="$logDir/bash.log"
@@ -54,7 +54,6 @@ install() {
   echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
   echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
   sudo apt-get install -y oracle-java7-installer &> $javaLog
-
 
   # Install BAMtools
 
