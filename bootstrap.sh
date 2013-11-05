@@ -250,11 +250,11 @@ install() {
 test -f /etc/bootstrapped && exit
 
 # set log file
-logFile=$HOME/bootstrap.log
+logFile="bootstrap.log"
 
 export -f install
 export -f log
-su vagrant -c "install > $logFile"
+su vagrant -c "install > $HOME/$logFile"
 
 # Mark as bootstrapped
 sudo sh -c "date > /etc/bootstrapped"
