@@ -16,7 +16,7 @@ install() {
   
   # Create software folder
   
-  mkdir ~/soft && cd~/soft
+  mkdir ~/soft && cd ~/soft
 
   
   # Update bash to fix the direxpand issue
