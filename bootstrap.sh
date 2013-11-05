@@ -223,4 +223,4 @@ export -f install
 su vagrant -c 'install'
 
 # Mark as bootstrapped
-sudo date > /etc/bootstrapped
+sudo sh -c "date > /etc/bootstrapped"
