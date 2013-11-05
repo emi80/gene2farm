@@ -133,6 +133,7 @@ install() {
   cd ~/soft
   wget -q http://research-pub.gene.com/gmap/src/gmap-gsnap-2013-10-28.tar.gz
   tar xf gmap-gsnap-2013-10-28.tar.gz
+  cd gmap-2013-10-28
   ./configure
   make
   printf '\nexport PATH=$HOME/soft/gmap-2013-10-28/src:$PATH\n' >> ~/.bashrc
