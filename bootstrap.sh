@@ -6,6 +6,12 @@
 #  taking place in Piacenza, 13-16 of November 2013
 #
 
+log() {
+    msg=$1
+    date=`date`
+    printf "$date - $msg"
+}
+
 install() {
 
   # Install missing packages
@@ -220,6 +226,7 @@ install() {
 test -f /etc/bootstrapped && exit
 
 export -f install
+export -f log
 su vagrant -c 'install'
 
 # Mark as bootstrapped
