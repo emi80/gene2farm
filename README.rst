@@ -43,13 +43,13 @@ You can then resume the machine and continue working::
     vagrant up
     vagrant ssh
 
-When you don't need the VM anymore you can remove it from your system:
-
-.. code-block::
+When you don't need the VM anymore you can remove it from your system::
 
     vagrant destroy
 
-    **Please note that all the ``vagrant`` commands should be run within the VM folder**
+..
+
+    Please note that all the ``vagrant`` commands should be run within the VM folder
 
 VM configuration
 ----------------
