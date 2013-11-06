@@ -35,7 +35,7 @@ VM configuration
 
 The VM is configured by default with 2G of ram and 1 cpu. You can change the configuration by editing the following part of the Vagrantfile:
 
-.. code-block:: bash
+.. code-block:: ruby
 
     # virtualbox custom configuration
     config.vm.provider :virtualbox do |vb|
