@@ -9,65 +9,99 @@
 log() {
     msg=$1
     date=`date`
-    printf "$date - $msg" > /dev/stderr
+    printf "$date - $msg"
 }
 
 install() {
 
+  # Create installation folders
+
+  log "Create installation folders"
+  mkdir $HOME/soft && cd $HOME/soft
+  mkdir -p $HOME/soft/logs
+
+  
+  # Define log folder and files
+
+  logDir="$HOME/soft/logs"
+
+  systemLog="$logDir/system.log"
+  bashLog="$logDir/bash.log"
+  javaLog="$logDir/java.log"
+  bamtoolsLog="$logDir/bamtools.log"
+  bedtoolsLog="$logDir/bedtools.log"
+  bowtieLog="$logDir/bowtie.log"
+  tophatLog="$logDir/tophat.log"
+  bwaLog="$logDir/bwa.log"
+  cufflinksLog="$logDir/cufflinks.log"
+  samtoolsLog="$logDir/samtools.log"
+  exonerateLog="$logDir/exonerate.log"
+  fastqcLog="$logDir/fastqc.log"
+  gatkLog="$logDir/gatk.log"
+  gmapLog="$logDir/gmap.log"
+  igvLog="$logDir/igv.log"
+  igvToolsLog="$logDir/igvTools.log"
+  lastLog="$logDir/last.log"
+  picardLog="$logDir/picard.log"
+  stampyLog="$logDir/stampy.log"
+  tagdustLog="$logDir/tagdust.log"
+  vcftoolsLog="$logDir/vcftools.log"
+  gemtoolsLog="$logDir/gemtools.log"
+  fluxLog="$logDir/flux.log"
+
+  
   # Install missing packages
 
   log "Install missing packages"
-  sudo apt-get update --fix-missing
-  sudo apt-get install -y vim cmake make g++ git unzip libncurses5-dev libncursesw5-dev wget curl python-software-properties
-
-
-  # Create software folder
-
-  log "Create software folder"
-  mkdir ~/soft && cd ~/soft
+  sudo apt-get update --fix-missing &> $systemLog
+  sudo apt-get install -y vim cmake make g++ git unzip libncurses5-dev libncursesw5-dev wget curl python-software-properties &> $systemLog
 
 
   # Update bash to fix the direxpand issue
 
   log "Update bash to fix the direxpand issue"
   cd ~/soft
-  git clone git://git.sv.gnu.org/bash.git
+  git clone git://git.sv.gnu.org/bash.git &> $bashLog
   cd bash
-  make
-  sudo make install
+  ./configure &> $bashLog
+  make &> $bashLog
+  sudo make install &> $bashLog
+  cd .. && rm -rf bash
   printf '\nshopt -s direxpand\n' >> ~/.bashrc
+
 
   # Install Oracle JRE
 
-  log "Install Oracle JRE"
-  sudo add-apt-repository -y ppa:webupd8team/java
-  sudo apt-get update
-  sudo apt-get install -y oracle-java7-installer
-
+  log "Install Oracle JRE 7"
+  sudo add-apt-repository -y ppa:webupd8team/java &> $javaLog
+  sudo apt-get update &> $javaLog
+  echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
+  echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
+  sudo apt-get install -y oracle-java7-installer &> $javaLog
 
   # Install BAMtools
 
-  log "Install BAMtools"
+  log "Install BAMtools v2.3.0"
   cd ~/soft
-  git clone git://github.com/pezmaster31/bamtools.git
+  git clone git://github.com/pezmaster31/bamtools.git &> $bamtoolsLog
   cd bamtools
-  git checkout v2.3.0
+  git checkout v2.3.0 &> $bamtoolsLog
   mkdir build
   cd build
-  cmake ..
-  make
+  cmake .. &> $bamtoolsLog
+  make &> $bamtoolsLog
   printf '\nexport PATH=$HOME/soft/bamtools/bin:$PATH\n' >> .bashrc
   printf '\nexport LD_LIBRARY_PATH=$HOME/soft/bamtools/lib:$LD_LIBRARY_PATH\n' >> .bashrc
 
 
   # Install BEDtools
 
-  log "Install BEDtools"
+  log "Install BEDtools v2.17.0"
   cd ~/soft
   wget -q http://bedtools.googlecode.com/files/BEDTools.v2.17.0.tar.gz
-  tar xf BEDTools.v2.17.0.tar.gz
+  tar xf BEDTools.v2.17.0.tar.gz && rm BEDTools.v2.17.0.tar.gz
   cd bedtools-2.17.0
-  make
+  make &> $bedtoolsLog
   printf '\nexport PATH=$HOME/soft/bedtools-2.17.0:$PATH\n' >> ~/.bashrc
 
 
@@ -76,7 +110,7 @@ install() {
   log "Install Bowtie2"
   cd ~/soft
   wget -q -O bowtie2-2.1.0-linux-x86_64.zip 'http://downloads.sourceforge.net/project/bowtie-bio/bowtie2/2.1.0/bowtie2-2.1.0-linux-x86_64.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fbowtie-bio%2Ffiles%2Fbowtie2%2F2.1.0%2F&ts=1375884688&use_mirror=garr'
-  unzip -q bowtie2-2.1.0-linux-x86_64.zip
+  unzip -q bowtie2-2.1.0-linux-x86_64.zip && rm bowtie2-2.1.0-linux-x86_64.zip
   printf '\nexport PATH=$HOME/soft/bowtie2-2.1.0/:$PATH\n' >> ~/.bashrc
 
 
@@ -227,7 +261,7 @@ install() {
   printf '\nexport PATH=$HOME/soft/vcftools_0.1.11/bin:$PATH\n' >> ~/.bashrc
 
 
-  # Install GEM
+  # Install GEMtools
 
   log "Install GEMtools"
   cd ~/soft
@@ -236,7 +270,7 @@ install() {
   printf '\nexport PATH=$HOME/gemtools-1.6.2-core2/bin:$PATH\n' >> ~/.bashrc
 
 
-  # Install FLUX
+  # Install Flux Capacitor
 
   log "Install Flux Capacitor"
   cd ~/soft
@@ -249,12 +283,9 @@ install() {
 # Exit if already bootstrapped.
 test -f /etc/bootstrapped && exit
 
-# set log file
-logFile="bootstrap.log"
-
 export -f install
 export -f log
-su vagrant -c "install > \$HOME/$logFile"
+su vagrant -c "install"
 
 # Mark as bootstrapped
 sudo sh -c "date > /etc/bootstrapped"

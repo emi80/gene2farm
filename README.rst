@@ -12,6 +12,7 @@ To use the virtual machine the following tools are needed:
 
 - Vagrant - http://docs.vagrantup.com/v2/installation/index.html
 
+
 VM installation
 ---------------
 
@@ -21,7 +22,7 @@ Once you have all the required dependencies you can install the machine::
     cd gene2farm
     vagrant up
 
-The configuration of the VM and the installation of all the software can take some time
+The configuration of the VM and the installation of all the software will take some time.
 
 Once the installation is completed you can access the VM with the following command::
 
