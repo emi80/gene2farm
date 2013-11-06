@@ -38,16 +38,18 @@ The software for the course can be found within the ``/soft`` folder. In case yo
 
     vagrant halt
 
-You can then resume the machine with::
+You can then resume the machine and continue working::
 
     vagrant up
+    vagrant ssh
 
 When you don't need the VM anymore you can remove it from your system::
 
-    cd gene2farm
     vagrant destroy
 
 Please remember that doing so you will need to go through the installation process in case you want to install it again.
+
+    Please note the all the ``vagrant`` commands should be run within the VM folder
 
 VM configuration
 ----------------
