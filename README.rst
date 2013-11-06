@@ -47,7 +47,7 @@ When you don't need the VM anymore you can remove it from your system::
 
     vagrant destroy
 
-..
+More information can be found `here <http://docs.vagrantup.com/v2/getting-started/teardown.html>`_.
 
     Please note that all the ``vagrant`` commands should be run within the VM folder
 
