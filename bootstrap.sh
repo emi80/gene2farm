@@ -122,7 +122,7 @@ install() {
   log "Install Tophat v2.0.9"
   cd ~/soft
   wget -q http://tophat.cbcb.umd.edu/downloads/tophat-2.0.9.Linux_x86_64.tar.gz
-  tar xf tophat-2.0.9.Linux_x86_64.tar.gz
+  tar xf tophat-2.0.9.Linux_x86_64.tar.gz && rm tophat-2.0.9.Linux_x86_64.tar.gz
   printf '\nexport PATH=$HOME/soft/tophat-2.0.9.Linux_x86_64:$PATH\n' >> ~/.bashrc
 
 
@@ -131,7 +131,7 @@ install() {
   log "Install Bwa v0.7.5a"
   cd ~/soft
   wget -q http://downloads.sourceforge.net/project/bio-bwa/bwa-0.7.5a.tar.bz2
-  tar xf bwa-0.7.5a.tar.bz2
+  tar xf bwa-0.7.5a.tar.bz2 && rm bwa-0.7.5a.tar.bz2
   cd bwa-0.7.5a
   make &> $bwaLog
   printf '\nexport PATH=$HOME/soft/bwa-0.7.5a:$PATH\n' >> ~/.bashrc
@@ -142,7 +142,7 @@ install() {
   log "Install Cufflinks v2.1.1"
   cd ~/soft
   wget -q http://cufflinks.cbcb.umd.edu/downloads/cufflinks-2.1.1.Linux_x86_64.tar.gz
-  tar xf cufflinks-2.1.1.Linux_x86_64.tar.gz
+  tar xf cufflinks-2.1.1.Linux_x86_64.tar.gz && rm cufflinks-2.1.1.Linux_x86_64.tar.gz
   printf '\nexport PATH=$HOME/soft/cufflinks-2.1.1.Linux_x86_64:$PATH\n' >> ~/.bashrc
 
 
@@ -151,7 +151,7 @@ install() {
   log "Install SAMtools v0.1.19"
   cd ~/soft
   wget -q http://downloads.sourceforge.net/project/samtools/samtools/0.1.19/samtools-0.1.19.tar.bz2
-  tar xf samtools-0.1.19.tar.bz2
+  tar xf samtools-0.1.19.tar.bz2 && rm samtools-0.1.19.tar.bz2
   cd samtools-0.1.19
   make &> $samtoolsLog
   printf '\nexport PATH=$HOME/soft/samtools-0.1.19:$PATH\n' >> ~/.bashrc
@@ -162,7 +162,7 @@ install() {
   log "Install Exonerate v 2.2.0"
   cd ~/soft
   wget -q http://www.ebi.ac.uk/~guy/exonerate/exonerate-2.2.0-x86_64.tar.gz
-  tar xf exonerate-2.2.0-x86_64.tar.gz
+  tar xf exonerate-2.2.0-x86_64.tar.gz && rm exonerate-2.2.0-x86_64.tar.gz
   printf '\nexport PATH=$HOME/soft/exonerate-2.2.0-x86_64:$PATH\n' >> ~/.bashrc
 
 
@@ -171,7 +171,7 @@ install() {
   log "Install Fastqc v0.10.1"
   cd ~/soft
   wget -q http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.10.1.zip
-  unzip -q fastqc_v0.10.1.zip
+  unzip -q fastqc_v0.10.1.zip && rm fastqc_v0.10.1.zip
   chmod 755 FastQC/fastqc
   printf '\nexport PATH=$HOME/soft/FastQC:$PATH\n' >> ~/.bashrc
 
@@ -181,7 +181,7 @@ install() {
   log "Install GenomeAnalysisTK v2.7.4"
   cd ~/soft
   wget -q http://genome.crg.es/~epalumbo/gene2farm/GenomeAnalysisTK-2.7-4.tar.bz2
-  tar xf GenomeAnalysisTK-2.7-4.tar.bz2
+  tar xf GenomeAnalysisTK-2.7-4.tar.bz2 && rm GenomeAnalysisTK-2.7-4.tar.bz2
 
 
   # Install Gmap
@@ -189,7 +189,7 @@ install() {
   log "Install Gmap - 28 Nov 2013"
   cd ~/soft
   wget -q http://research-pub.gene.com/gmap/src/gmap-gsnap-2013-10-28.tar.gz
-  tar xf gmap-gsnap-2013-10-28.tar.gz
+  tar xf gmap-gsnap-2013-10-28.tar.gz && rm gmap-gsnap-2013-10-28.tar.gz
   cd gmap-2013-10-28
   ./configure &> $gmapLog
   make &> $gmapLog
@@ -200,7 +200,7 @@ install() {
   log "Install IGV v2.3.20"
   cd ~/soft
   wget -q http://genome.crg.es/~epalumbo/gene2farm/IGV_2.3.20.zip
-  unzip -q IGV_2.3.20.zip
+  unzip -q IGV_2.3.20.zip && rm IGV_2.3.20.zip
   printf '\nexport PATH=$HOME/soft/IGV_2.3.20:$PATH\n' >> ~/.bashrc
 
 
@@ -209,7 +209,7 @@ install() {
   log "Install IGVtools v2.3.20"
   cd ~/soft
   wget -q http://genome.crg.es/~epalumbo/gene2farm/igvtools_2.3.20.zip
-  unzip -q igvtools_2.3.20.zip
+  unzip -q igvtools_2.3.20.zip && rm igvtools_2.3.20.zip
   printf '\nexport PATH=$HOME/soft/IGVTools:$PATH\n' >> ~/.bashrc
 
 
@@ -218,7 +218,7 @@ install() {
   log "Install Last v362"
   cd ~/soft
   wget -q http://last.cbrc.jp/last-362.zip
-  unzip -q last-362.zip
+  unzip -q last-362.zip && rm last-362.zip
   cd last-362
   make &> $lastLog
   printf '\nexport PATH=$HOME/soft/last-362/src:$PATH\n' >> ~/.bashrc
@@ -228,7 +228,7 @@ install() {
   log "Install Picard-tools v1.101"
   cd ~/soft
   wget -q http://downloads.sourceforge.net/project/picard/picard-tools/1.101/picard-tools-1.101.zip
-  unzip -q picard-tools-1.101.zip
+  unzip -q picard-tools-1.101.zip && rm picard-tools-1.101.zip
 
 
   # Install Stampy
@@ -236,7 +236,7 @@ install() {
   log "Install Stampy v1.0.22r1848"
   cd ~/soft
   wget -q http://genome.crg.es/~epalumbo/gene2farm/stampy-1.0.22r1848.tgz
-  tar xf stampy-1.0.22r1848.tgz
+  tar xf stampy-1.0.22r1848.tgz && rm stampy-1.0.22r1848.tgz
   cd stampy-1.0.22
   make &> $stampyLog
   printf '\nexport PATH=$HOME/soft/stampy-1.0.22:$PATH\n' >> ~/.bashrc
@@ -247,7 +247,7 @@ install() {
   log "Install Tagdust v1.12"
   cd ~/soft
   wget -q http://genome.gsc.riken.jp/osc/english/software/src/tagdust.tgz
-  tar xf tagdust.tgz
+  tar xf tagdust.tgz && rm tagdust.tgz
   cd tagdust
   make &> $tagdustLog
   printf '\nexport PATH=$HOME/tagdust:$PATH\n' >> ~/.bashrc
@@ -258,7 +258,7 @@ install() {
   log "Install Vcftools v0.1.11"
   cd ~/soft
   wget -q http://downloads.sourceforge.net/project/vcftools/vcftools_0.1.11.tar.gz
-  tar xf vcftools_0.1.11.tar.gz
+  tar xf vcftools_0.1.11.tar.gz && rm vcftools_0.1.11.tar.gz
   cd vcftools_0.1.11
   make &> $vcftoolsLog
   printf '\nexport PATH=$HOME/soft/vcftools_0.1.11/bin:$PATH\n' >> ~/.bashrc
@@ -269,7 +269,7 @@ install() {
   log "Install GEMtools v1.6.2"
   cd ~/soft
   wget -q http://barnaserver.com/gemtools/releases/GEMTools-static-core2-1.6.2.tar.gz
-  tar xf GEMTools-static-core2-1.6.2.tar.gz
+  tar xf GEMTools-static-core2-1.6.2.tar.gz && rm GEMTools-static-core2-1.6.2.tar.gz
   printf '\nexport PATH=$HOME/gemtools-1.6.2-core2/bin:$PATH\n' >> ~/.bashrc
 
 
@@ -278,7 +278,7 @@ install() {
   log "Install Flux Capacitor v1.2.4"
   cd ~/soft
   wget -q http://sammeth.net/artifactory/barna/barna/barna.capacitor/1.2.4/flux-capacitor-1.2.4.tgz
-  tar xf flux-capacitor-1.2.4.tgz
+  tar xf flux-capacitor-1.2.4.tgz && rm flux-capacitor-1.2.4.tgz
   printf '\nexport PATH=$HOME/flux-capacitor-1.2.4/bin/:$PATH\n' >> ~/.bashrc
 
 }
