@@ -230,6 +230,8 @@ install() {
   cd ~/soft
   wget -q http://downloads.sourceforge.net/project/picard/picard-tools/1.101/picard-tools-1.101.zip
   unzip -q picard-tools-1.101.zip && rm picard-tools-1.101.zip
+  # Uncomment the following line if you do not need the snappy-java jar bundled with picard
+  # rm snappy-java*.jar
 
 
   # Install Stampy
