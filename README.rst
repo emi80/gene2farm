@@ -22,7 +22,7 @@ Once you have all the required dependencies you can install the machine::
     cd gene2farm
     vagrant up
 
-The configuration of the VM and the installation of all the software will take approximately half hour, depending on your internet connection speed and your computer specifications. However, thi is a one-time step that does only need to be repeated if you remove the machine (see `destroy`_).
+The configuration of the VM and the installation of all the software will take approximately half hour, depending on your internet connection speed and your computer specifications. However, thi is a one-time step that does only need to be repeated if you remove the machine (see destroy_).
 
 
 VM Usage
