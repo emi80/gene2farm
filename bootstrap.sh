@@ -94,8 +94,8 @@ install() {
   cd build
   cmake .. &> $bamtoolsLog
   make &> $bamtoolsLog
-  printf '\nexport PATH=$HOME/soft/bamtools/bin:$PATH\n' >> .bashrc
-  printf '\nexport LD_LIBRARY_PATH=$HOME/soft/bamtools/lib:$LD_LIBRARY_PATH\n' >> .bashrc
+  printf '\nexport PATH=$HOME/soft/bamtools/bin:$PATH\n' >> ~/.bashrc
+  printf '\nexport LD_LIBRARY_PATH=$HOME/soft/bamtools/lib:$LD_LIBRARY_PATH\n' >> ~/.bashrc
 
 
   # Install BEDtools
