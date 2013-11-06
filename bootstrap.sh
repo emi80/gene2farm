@@ -57,7 +57,7 @@ install() {
 
   log "Install missing packages"
   sudo apt-get update --fix-missing &> $systemLog
-  sudo apt-get install -y vim cmake make g++ git unzip libncurses5-dev libncursesw5-dev wget curl python-software-properties &> $systemLog
+  sudo apt-get install -y vim cmake make g++ git unzip gettext wget curl python-software-properties libncurses5-dev libncursesw5-dev &> $systemLog
 
 
   # Update bash to fix the direxpand issue
