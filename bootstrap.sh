@@ -161,7 +161,7 @@ install() {
 
   log "Install Exonerate v 2.2.0"
   cd ~/soft
-  wget http://www.ebi.ac.uk/~guy/exonerate/exonerate-2.2.0-x86_64.tar.gz
+  wget -q http://www.ebi.ac.uk/~guy/exonerate/exonerate-2.2.0-x86_64.tar.gz
   tar xf exonerate-2.2.0-x86_64.tar.gz
   printf '\nexport PATH=$HOME/soft/exonerate-2.2.0-x86_64:$PATH\n' >> ~/.bashrc
 
