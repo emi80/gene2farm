@@ -8,7 +8,7 @@ Requirements
 
 To use the virtual machine the following tools are needed:
 
-- VirtualBox - https://www.virtualbox.org/wiki/Downloads
+- Oracle VirtualBox - https://www.virtualbox.org/wiki/Downloads
 
 - Vagrant - http://docs.vagrantup.com/v2/installation/index.html
 
@@ -30,3 +30,16 @@ Once the installation is completed you can access the VM with the following comm
 
 The software for the course can be found within the ``/soft`` folder.
 
+VM configuration
+~~~~~~~~~~~~~~~~
+
+The VM is configured by default with 2G of ram and 1 cpu. You can change the configuration by editing the following part of the Vagrantfile:
+
+.. code-block:: bash
+
+    # virtualbox custom configuration
+    config.vm.provider :virtualbox do |vb|
+        vb.customize ["modifyvm", :id, "--memory", "2048"]
+    end
+
+Further information on how to configure the virtualbox provider for Vagrant can be found `here<http://docs.vagrantup.com/v2/virtualbox/configuration.html>`_.
