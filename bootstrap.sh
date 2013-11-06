@@ -228,7 +228,7 @@ install() {
   log "Install Picard-tools v1.101"
   cd ~/soft
   wget -q http://downloads.sourceforge.net/project/picard/picard-tools/1.101/picard-tools-1.101.zip
-  unzip picard-tools-1.101.zip
+  unzip -q picard-tools-1.101.zip
 
 
   # Install Stampy
