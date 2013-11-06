@@ -5,7 +5,7 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  # All Vagrant configuration is done here. For a reference of the available 
+  # All Vagrant configuration is done here. For a reference of the available
   # options, please see the online documentation at vagrantup.com.
 
   # the box
@@ -17,7 +17,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # virtualbox custom configuration
   config.vm.provider :virtualbox do |vb|
+      vb.customize ["modifyvm", :id, "--cpus", "1"]
       vb.customize ["modifyvm", :id, "--memory", "2048"]
+      vb.customize ["modifyvm", :id, "--vram", "16"]
   end
 
   # provisioninig

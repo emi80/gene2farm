@@ -33,13 +33,15 @@ The software for the course can be found within the ``/soft`` folder.
 VM configuration
 ~~~~~~~~~~~~~~~~
 
-The VM is configured by default with 2G of ram and 1 cpu. You can change the configuration by editing the following part of the Vagrantfile:
+The VM is configured by default with 1 cpu, 2G of ram and 16M of video memory. You can change the configuration by editing the following part of the Vagrantfile:
 
 .. code-block:: ruby
 
     # virtualbox custom configuration
     config.vm.provider :virtualbox do |vb|
+        vb.customize ["modifyvm", :id, "--cpus", "1"]
         vb.customize ["modifyvm", :id, "--memory", "2048"]
+        vb.customize ["modifyvm", :id, "--vram", "16"]
     end
 
 Further information on how to configure the virtualbox provider for Vagrant can be found `here <http://docs.vagrantup.com/v2/virtualbox/configuration.html>`_.
