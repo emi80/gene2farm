@@ -42,4 +42,4 @@ The VM is configured by default with 2G of ram and 1 cpu. You can change the con
         vb.customize ["modifyvm", :id, "--memory", "2048"]
     end
 
-Further information on how to configure the virtualbox provider for Vagrant can be found `here<http://docs.vagrantup.com/v2/virtualbox/configuration.html>`_.
+Further information on how to configure the virtualbox provider for Vagrant can be found `here <http://docs.vagrantup.com/v2/virtualbox/configuration.html>`_.
