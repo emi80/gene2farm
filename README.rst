@@ -32,7 +32,9 @@ Once the installation is completed you can access the VM with the following comm
 
     vagrant ssh
 
-The software for the course can be found within the ``/soft`` folder. In case you need to shutdown tha machine but you want to keep the configuration you have two options:
+The software for the course can be found within the ``/soft`` folder.
+
+In case you need to shutdown tha machine but you want to keep the configuration you have two options:
 
 1. suspending the VM. It will be fast to recover your work but the VM will use disk space::
 
