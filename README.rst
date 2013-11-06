@@ -30,13 +30,13 @@ Once the installation is completed you can access the VM with the following comm
 
 The software for the course can be found within the ``/soft`` folder. In case you need to shutdown tha machine but you want to keep the configuration you have two options:
 
-    1. suspending the VM. It will be fast to recover your work but the VM will use disk space::
+1. suspending the VM. It will be fast to recover your work but the VM will use disk space::
 
-        vagrant suspend
+    vagrant suspend
 
-    2. power off the VM. The machine will take more time to boot again but ther won't be any disk usage::
+2. power off the VM. The machine will take more time to boot again but ther won't be any disk usage::
 
-        vagrant halt
+    vagrant halt
 
 You can then resume the machine with::
 
