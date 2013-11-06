@@ -30,24 +30,27 @@ install() {
   javaLog="$logDir/java.log"
   bamtoolsLog="$logDir/bamtools.log"
   bedtoolsLog="$logDir/bedtools.log"
-  bowtieLog="$logDir/bowtie.log"
-  tophatLog="$logDir/tophat.log"
   bwaLog="$logDir/bwa.log"
-  cufflinksLog="$logDir/cufflinks.log"
   samtoolsLog="$logDir/samtools.log"
-  exonerateLog="$logDir/exonerate.log"
-  fastqcLog="$logDir/fastqc.log"
-  gatkLog="$logDir/gatk.log"
   gmapLog="$logDir/gmap.log"
-  igvLog="$logDir/igv.log"
-  igvToolsLog="$logDir/igvTools.log"
   lastLog="$logDir/last.log"
-  picardLog="$logDir/picard.log"
   stampyLog="$logDir/stampy.log"
   tagdustLog="$logDir/tagdust.log"
   vcftoolsLog="$logDir/vcftools.log"
-  gemtoolsLog="$logDir/gemtools.log"
-  fluxLog="$logDir/flux.log"
+
+  # Unused log files
+
+  # bowtieLog="$logDir/bowtie.log"
+  # tophatLog="$logDir/tophat.log"
+  # cufflinksLog="$logDir/cufflinks.log"
+  # exonerateLog="$logDir/exonerate.log"
+  # fastqcLog="$logDir/fastqc.log"
+  # gatkLog="$logDir/gatk.log"
+  # igvLog="$logDir/igv.log"
+  # igvToolsLog="$logDir/igvTools.log"
+  # picardLog="$logDir/picard.log"
+  # gemtoolsLog="$logDir/gemtools.log"
+  # fluxLog="$logDir/flux.log"
 
 
   # Install missing packages
@@ -292,4 +295,4 @@ export -f log
 su vagrant -c "install"
 
 # Mark as bootstrapped
-sudo sh -c "date > /etc/bootstrapped"
+date > /etc/bootstrapped
