@@ -22,16 +22,35 @@ Once you have all the required dependencies you can install the machine::
     cd gene2farm
     vagrant up
 
-The configuration of the VM and the installation of all the software will take some time.
+The first time the configuration of the VM and the installation of all the software will take some time.
 
 Once the installation is completed you can access the VM with the following command::
 
     vagrant ssh
 
-The software for the course can be found within the ``/soft`` folder.
+The software for the course can be found within the ``/soft`` folder. In case you need to shutdown tha machine but you want to keep the configuration you have two options:
+
+    1. suspending the VM. It will be fast to recover your work but the VM will use disk space::
+
+        vagrant suspend
+
+    2. power off the VM. The machine will take more time to boot again but ther won't be any disk usage::
+
+        vagrant halt
+
+You can then resume the machine with::
+
+    vagrant up
+
+When you don't need the VM anymore you can remove it from your system::
+
+    cd gene2farm
+    vagrant destroy
+
+Please remember that doing so you will need to go through the installation process in case you want to install it again.
 
 VM configuration
-~~~~~~~~~~~~~~~~
+----------------
 
 The VM is configured by default with 1 cpu, 2G of ram and 16M of video memory. You can change the configuration by editing the following part of the Vagrantfile:
 
