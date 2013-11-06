@@ -49,7 +49,7 @@ When you don't need the VM anymore you can remove it from your system::
 
 Please remember that doing so you will need to go through the installation process in case you want to install it again.
 
-.. note ::
+.. note::
 
     Please note that all the ``vagrant`` commands should be run within the VM folder
 
