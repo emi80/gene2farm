@@ -36,11 +36,11 @@ The software for the course can be found within the ``/soft`` folder.
 
 In case you need to shutdown tha machine but you want to keep the configuration you have two options:
 
-1. suspending the VM. It will be fast to recover your work but the VM will use disk space::
+1. suspending the VM. You will be able to resume the VM quikly but the VM will use disk space while suspended::
 
     vagrant suspend
 
-2. power off the VM. The machine will take more time to boot again but ther won't be any disk usage::
+2. power off the VM. The VM will take more time to resume but there won't be any disk usage::
 
     vagrant halt
 
