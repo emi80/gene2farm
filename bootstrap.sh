@@ -66,7 +66,7 @@ install() {
   cd ~/soft
   git clone git://git.sv.gnu.org/bash.git &> $bashLog
   cd bash
-  ./configure &> $bashLog
+  ./configure --prefix="/" &> $bashLog
   make &> $bashLog
   sudo make install &> $bashLog
   cd .. && rm -rf bash
