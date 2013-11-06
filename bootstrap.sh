@@ -270,7 +270,7 @@ install() {
   cd ~/soft
   wget -q http://barnaserver.com/gemtools/releases/GEMTools-static-core2-1.6.2.tar.gz
   tar xf GEMTools-static-core2-1.6.2.tar.gz && rm GEMTools-static-core2-1.6.2.tar.gz
-  printf '\nexport PATH=$HOME/gemtools-1.6.2-core2/bin:$PATH\n' >> ~/.bashrc
+  printf '\nexport PATH=$HOME/soft/gemtools-1.6.2-core2/bin:$PATH\n' >> ~/.bashrc
 
 
   # Install Flux Capacitor
@@ -279,7 +279,7 @@ install() {
   cd ~/soft
   wget -q http://sammeth.net/artifactory/barna/barna/barna.capacitor/1.2.4/flux-capacitor-1.2.4.tgz
   tar xf flux-capacitor-1.2.4.tgz && rm flux-capacitor-1.2.4.tgz
-  printf '\nexport PATH=$HOME/flux-capacitor-1.2.4/bin/:$PATH\n' >> ~/.bashrc
+  printf '\nexport PATH=$HOME/soft/flux-capacitor-1.2.4/bin/:$PATH\n' >> ~/.bashrc
 
 }
 
