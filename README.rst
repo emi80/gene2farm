@@ -24,6 +24,10 @@ Once you have all the required dependencies you can install the machine::
 
 The first time the configuration of the VM and the installation of all the software will take some time.
 
+
+VM Usage
+--------
+
 Once the installation is completed you can access the VM with the following command::
 
     vagrant ssh
@@ -47,9 +51,10 @@ When you don't need the VM anymore you can remove it from your system::
 
     vagrant destroy
 
-More information can be found `here <http://docs.vagrantup.com/v2/getting-started/teardown.html>`_.
+More information can be found `here <http://docs.vagrantup.com/v2/getting-started/index.html>`_.
 
     Please note that all the ``vagrant`` commands should be run within the VM folder
+
 
 VM configuration
 ----------------
