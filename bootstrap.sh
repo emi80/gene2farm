@@ -269,11 +269,11 @@ install() {
 
   # Install GEMtools
 
-  log "Install GEMtools v1.6.2"
+  log "Install GEMtools v1.7"
   cd ~/soft
-  wget -q http://genome.crg.es/~epalumbo/gene2farm/GEMTools-static-core2-1.6.2.tar.gz
-  tar xf GEMTools-static-core2-1.6.2.tar.gz && rm GEMTools-static-core2-1.6.2.tar.gz
-  printf '\nexport PATH=$HOME/soft/gemtools-1.6.2-core2/bin:$PATH\n' >> ~/.bashrc
+  wget -q http://genome.crg.es/~epalumbo/gene2farm/gemtools-1.7-core2.tar.gz
+  tar xf gemtools-1.7-core2.tar.gz && rm gemtools-1.7-core2.tar.gz
+  printf '\nexport PATH=$HOME/soft/gemtools-1.7-core2/bin:$PATH\n' >> ~/.bashrc
 
 
   # Install Flux Capacitor
