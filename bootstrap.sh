@@ -9,7 +9,7 @@
 log() {
     msg=$1
     date=`date`
-    printf "$date - $msg"
+    printf "$date - $msg\n"
 }
 
 install() {
@@ -20,7 +20,7 @@ install() {
   mkdir $HOME/soft && cd $HOME/soft
   mkdir -p $HOME/soft/logs
 
-  
+
   # Define log folder and files
 
   logDir="$HOME/soft/logs"
@@ -49,7 +49,7 @@ install() {
   gemtoolsLog="$logDir/gemtools.log"
   fluxLog="$logDir/flux.log"
 
-  
+
   # Install missing packages
 
   log "Install missing packages"
@@ -59,7 +59,7 @@ install() {
 
   # Update bash to fix the direxpand issue
 
-  log "Update bash to fix the direxpand issue"
+  log "Update bash to v4.2.45"
   cd ~/soft
   git clone git://git.sv.gnu.org/bash.git &> $bashLog
   cd bash
@@ -107,16 +107,16 @@ install() {
 
   # Install Bowtie2
 
-  log "Install Bowtie2"
+  log "Install Bowtie2 v2.1.0"
   cd ~/soft
   wget -q -O bowtie2-2.1.0-linux-x86_64.zip 'http://downloads.sourceforge.net/project/bowtie-bio/bowtie2/2.1.0/bowtie2-2.1.0-linux-x86_64.zip?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fbowtie-bio%2Ffiles%2Fbowtie2%2F2.1.0%2F&ts=1375884688&use_mirror=garr'
   unzip -q bowtie2-2.1.0-linux-x86_64.zip && rm bowtie2-2.1.0-linux-x86_64.zip
   printf '\nexport PATH=$HOME/soft/bowtie2-2.1.0/:$PATH\n' >> ~/.bashrc
 
 
-  # Install Tophat2
+  # Install Tophat
 
-  log "Install Tophat2"
+  log "Install Tophat v2.0.9"
   cd ~/soft
   wget -q http://tophat.cbcb.umd.edu/downloads/tophat-2.0.9.Linux_x86_64.tar.gz
   tar xf tophat-2.0.9.Linux_x86_64.tar.gz
@@ -125,18 +125,18 @@ install() {
 
   # Install Bwa
 
-  log "Install Bwa"
+  log "Install Bwa v0.7.5a"
   cd ~/soft
   wget -q http://downloads.sourceforge.net/project/bio-bwa/bwa-0.7.5a.tar.bz2
   tar xf bwa-0.7.5a.tar.bz2
   cd bwa-0.7.5a
-  make
+  make &> $bwaLog
   printf '\nexport PATH=$HOME/soft/bwa-0.7.5a:$PATH\n' >> ~/.bashrc
 
 
   # Install Cufflinks
 
-  log "Install Cufflinks"
+  log "Install Cufflinks v2.1.1"
   cd ~/soft
   wget -q http://cufflinks.cbcb.umd.edu/downloads/cufflinks-2.1.1.Linux_x86_64.tar.gz
   tar xf cufflinks-2.1.1.Linux_x86_64.tar.gz
@@ -145,18 +145,18 @@ install() {
 
   # Install SAMtools
 
-  log "Install SAMtools"
+  log "Install SAMtools v0.1.19"
   cd ~/soft
   wget -q http://downloads.sourceforge.net/project/samtools/samtools/0.1.19/samtools-0.1.19.tar.bz2
   tar xf samtools-0.1.19.tar.bz2
   cd samtools-0.1.19
-  make
+  make &> $samtoolsLog
   printf '\nexport PATH=$HOME/soft/samtools-0.1.19:$PATH\n' >> ~/.bashrc
 
 
   # Install Exonerate
 
-  log "Install Exonerate"
+  log "Install Exonerate v 2.2.0"
   cd ~/soft
   wget http://www.ebi.ac.uk/~guy/exonerate/exonerate-2.2.0-x86_64.tar.gz
   tar xf exonerate-2.2.0-x86_64.tar.gz
@@ -165,7 +165,7 @@ install() {
 
   # Install Fastqc
 
-  log "Install Fastqc"
+  log "Install Fastqc v0.10.1"
   cd ~/soft
   wget -q http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v0.10.1.zip
   unzip -q fastqc_v0.10.1.zip
@@ -175,7 +175,7 @@ install() {
 
   # Install GenomeAnalysisTK
 
-  log "Install GenomeAnalysisTK"
+  log "Install GenomeAnalysisTK v2.7.4"
   cd ~/soft
   wget -q http://genome.crg.es/~epalumbo/gene2farm/GenomeAnalysisTK-2.7-4.tar.bz2
   tar xf GenomeAnalysisTK-2.7-4.tar.bz2
@@ -183,18 +183,18 @@ install() {
 
   # Install Gmap
 
-  log "Install Gmap"
+  log "Install Gmap - 28 Nov 2013"
   cd ~/soft
   wget -q http://research-pub.gene.com/gmap/src/gmap-gsnap-2013-10-28.tar.gz
   tar xf gmap-gsnap-2013-10-28.tar.gz
   cd gmap-2013-10-28
-  ./configure
-  make
+  ./configure &> $gmapLog
+  make &> $gmapLog
   printf '\nexport PATH=$HOME/soft/gmap-2013-10-28/src:$PATH\n' >> ~/.bashrc
 
   # Install IGV
 
-  log "Install IGV"
+  log "Install IGV v2.3.20"
   cd ~/soft
   wget -q http://genome.crg.es/~epalumbo/gene2farm/IGV_2.3.20.zip
   unzip -q IGV_2.3.20.zip
@@ -203,7 +203,7 @@ install() {
 
   # Install Igvtools
 
-  log "Install IGVtools"
+  log "Install IGVtools v2.3.20"
   cd ~/soft
   wget -q http://genome.crg.es/~epalumbo/gene2farm/igvtools_2.3.20.zip
   unzip -q igvtools_2.3.20.zip
@@ -212,17 +212,17 @@ install() {
 
   # Install Last
 
-  log "Install Last"
+  log "Install Last v362"
   cd ~/soft
   wget -q http://last.cbrc.jp/last-362.zip
   unzip -q last-362.zip
   cd last-362
-  make
+  make &> $lastLog
   printf '\nexport PATH=$HOME/soft/last-362/src:$PATH\n' >> ~/.bashrc
 
   # Install Picard-tools
 
-  log "Install Picard-tools"
+  log "Install Picard-tools v1.101"
   cd ~/soft
   wget -q http://downloads.sourceforge.net/project/picard/picard-tools/1.101/picard-tools-1.101.zip
   unzip picard-tools-1.101.zip
@@ -230,40 +230,40 @@ install() {
 
   # Install Stampy
 
-  log "Install Stampy"
+  log "Install Stampy v1.0.22r1848"
   cd ~/soft
   wget -q http://genome.crg.es/~epalumbo/gene2farm/stampy-1.0.22r1848.tgz
   tar xf stampy-1.0.22r1848.tgz
   cd stampy-1.0.22
-  make
+  make &> $stampyLog
   printf '\nexport PATH=$HOME/soft/stampy-1.0.22:$PATH\n' >> ~/.bashrc
 
 
   # Install Tagdust
 
-  log "Install Tagdust"
+  log "Install Tagdust v1.12"
   cd ~/soft
   wget -q http://genome.gsc.riken.jp/osc/english/software/src/tagdust.tgz
   tar xf tagdust.tgz
   cd tagdust
-  make
+  make &> $tagdustLog
   printf '\nexport PATH=$HOME/tagdust:$PATH\n' >> ~/.bashrc
 
 
   # Install Vcftools
 
-  log "Install Vcftools"
+  log "Install Vcftools v0.1.11"
   cd ~/soft
   wget -q http://downloads.sourceforge.net/project/vcftools/vcftools_0.1.11.tar.gz
   tar xf vcftools_0.1.11.tar.gz
   cd vcftools_0.1.11
-  make
+  make &> $vcftoolsLog
   printf '\nexport PATH=$HOME/soft/vcftools_0.1.11/bin:$PATH\n' >> ~/.bashrc
 
 
   # Install GEMtools
 
-  log "Install GEMtools"
+  log "Install GEMtools v1.6.2"
   cd ~/soft
   wget -q http://barnaserver.com/gemtools/releases/GEMTools-static-core2-1.6.2.tar.gz
   tar xf GEMTools-static-core2-1.6.2.tar.gz
@@ -272,7 +272,7 @@ install() {
 
   # Install Flux Capacitor
 
-  log "Install Flux Capacitor"
+  log "Install Flux Capacitor v1.2.4"
   cd ~/soft
   wget -q http://sammeth.net/artifactory/barna/barna/barna.capacitor/1.2.4/flux-capacitor-1.2.4.tgz
   tar xf flux-capacitor-1.2.4.tgz
@@ -283,6 +283,10 @@ install() {
 # Exit if already bootstrapped.
 test -f /etc/bootstrapped && exit
 
+# fix stdin is not a tty issue
+sed -i 's/^mesg n$/tty -s \&\& mesg n/g' /root/.profile
+
+# install
 export -f install
 export -f log
 su vagrant -c "install"
