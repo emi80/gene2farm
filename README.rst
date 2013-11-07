@@ -12,7 +12,8 @@ To use the virtual machine the following tools are needed:
 
 - Vagrant - http://docs.vagrantup.com/v2/installation/index.html
 
-- Git with ssh - http://git-scm.com/downloads
+- If you are on a Mac or linux just check if you have git installed.
+  For Windows users: you need Git with ssh - http://git-scm.com/downloads
 
 X Server
 --------
