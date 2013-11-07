@@ -15,30 +15,6 @@ To use the virtual machine the following tools are needed:
 - If you are on a Mac or linux just check if you have git installed.
   For Windows users: you need Git with ssh - http://git-scm.com/downloads
 
-X Server
---------
-
-To access graphical application in the VM without installing any desktop environment you need an installation of X in your host machine. You can skip the installation if:
-
-- you already have an X Server installed
-- your host operative system is Linux
-- you have a Mac with OSX up to 10.5
-
-OSX
-~~~
-
-1. Install `XQuartz <http://xquartz.macosforge.org>`_
-2. Go to Applications -> Utilities
-3. Launch the X11 app
-4. Click on the Applications menu -> Terminal to open a new terminal window
-5. Work from there
-
-
-Windows
-~~~~~~~
-
-1. Install `Xming <http://www.straightrunning.com/XmingNotes>`_
-
 
 VM installation
 ---------------
@@ -100,3 +76,26 @@ The VM is configured by default with 1 cpu, 2G of ram and 16M of video memory. Y
     end
 
 Further information on how to configure the virtualbox provider for Vagrant can be found `here <http://docs.vagrantup.com/v2/virtualbox/configuration.html>`_.
+
+
+Using X applications
+--------------------
+
+To access graphical application in the VM without installing any desktop environment you need an X server running in your host machine. If you are on a linux host system you can skip the whole section.
+
+OSX
+~~~
+
+1. Install `XQuartz <http://xquartz.macosforge.org>`_. You can skip this if you are on OSX version up to 10.5.
+2. Go to Applications -> Utilities
+3. Launch the X11 app
+4. Click on the Applications menu -> Terminal to open a new terminal window
+5. Work from there
+
+
+Windows
+~~~~~~~
+
+1. Install `Xming <http://www.straightrunning.com/XmingNotes>`_
+
+    Rest of instructions coming soon
