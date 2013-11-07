@@ -72,6 +72,11 @@ install() {
   cd .. && rm -rf bash
   printf '\nshopt -s direxpand\n' >> ~/.bashrc
 
+  # Install xfce4
+  sudo apt-get update --fix-missing &> $systemLog
+  sudo apt-get install -y xfce4 elementary-icon-theme gdm
+  sudo sed -i 's/^exit 0$/service gdm start/g' /etc/rc.local
+
 
   # Install Oracle JRE
 
@@ -299,3 +304,7 @@ su vagrant -c "install"
 
 # Mark as bootstrapped
 date > /etc/bootstrapped
+
+# start gdm
+gdm=`dpkg -l gdm | tail -n 1 | cut -d " " -f1`
+[[ $gdm == "ii"]] && service start gdm
