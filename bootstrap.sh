@@ -60,19 +60,21 @@ install() {
   sudo apt-get install -y vim cmake make g++ git unzip gettext wget curl python-software-properties libncurses5-dev libncursesw5-dev &> $systemLog
 
 
-  # Update bash to fix the direxpand issue
+  # # Update bash to fix the direxpand issue
 
-  log "Update bash to v4.2.45"
-  cd ~/soft
-  git clone git://git.sv.gnu.org/bash.git &> $bashLog
-  cd bash
-  ./configure --prefix="/" &> $bashLog
-  make &> $bashLog
-  sudo make install &> $bashLog
-  cd .. && rm -rf bash
-  printf '\nshopt -s direxpand\n' >> ~/.bashrc
+  # log "Update bash to v4.2.45"
+  # cd ~/soft
+  # git clone git://git.sv.gnu.org/bash.git &> $bashLog
+  # cd bash
+  # ./configure --prefix="/" &> $bashLog
+  # make &> $bashLog
+  # sudo make install &> $bashLog
+  # cd .. && rm -rf bash
+  # printf '\nshopt -s direxpand\n' >> ~/.bashrc
 
   # Install xfce4
+
+  log "Install Xfce 4"
   sudo apt-get install -y xfce4 elementary-icon-theme gdm &> $systemLog
   sudo apt-get update --fix-missing &> $systemLog
   sudo apt-get install -y xfce4 elementary-icon-theme gdm &> $systemLog
@@ -303,9 +305,9 @@ export -f install
 export -f log
 su vagrant -c "install"
 
-# Mark as bootstrapped
-date > /etc/bootstrapped
-
 # start gdm
 gdm=`dpkg -l gdm | tail -n 1 | cut -d " " -f1`
-[[ $gdm == "ii"]] && service start gdm
+[[ $gdm == "ii" ]] && service start gdm
+
+# Mark as bootstrapped
+date > /etc/bootstrapped
