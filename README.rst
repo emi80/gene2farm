@@ -12,6 +12,32 @@ To use the virtual machine the following tools are needed:
 
 - Vagrant - http://docs.vagrantup.com/v2/installation/index.html
 
+- Git with ssh - http://git-scm.com/downloads
+
+X Server
+--------
+
+To access graphical application in the VM without installing any desktop environment you need an installation of X in your host machine. You can skip the installation if:
+
+- you already have an X Server installed
+- your host operative system is Linux
+- you have a Mac with OSX up to 10.5
+
+OSX
+~~~
+
+1. Install `XQuartz <http://xquartz.macosforge.org>`_
+2. Go to Applications -> Utilities
+3. Launch the X11 app
+4. Click on the Applications menu -> Terminal to open a new terminal window
+5. Work from there
+
+
+Windows
+~~~~~~~
+
+1. Install `Xming <http://www.straightrunning.com/XmingNotes>`_
+
 
 VM installation
 ---------------
