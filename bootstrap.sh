@@ -73,8 +73,9 @@ install() {
   printf '\nshopt -s direxpand\n' >> ~/.bashrc
 
   # Install xfce4
+  sudo apt-get install -y xfce4 elementary-icon-theme gdm &> $systemLog
   sudo apt-get update --fix-missing &> $systemLog
-  sudo apt-get install -y xfce4 elementary-icon-theme gdm
+  sudo apt-get install -y xfce4 elementary-icon-theme gdm &> $systemLog
   sudo sed -i 's/^exit 0$/service gdm start/g' /etc/rc.local
 
 
