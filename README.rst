@@ -6,6 +6,8 @@ The repository contains the Vagrant configuration files for the VM of the course
 Requirements
 ------------
 
+The virtual machine can only be ran on a 64bit system since most of the tools are only compiled for this architecture.
+
 To use the virtual machine the following tools are needed:
 
 - Oracle VirtualBox - https://www.virtualbox.org/wiki/Downloads
