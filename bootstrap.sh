@@ -345,6 +345,7 @@ install() {
 
 }
 
+# Force re-bootstrapping
 if [[ $1 == "reset" ]]; then
   log "Reset bootstrapping"
   rm /etc/bootstrapped
@@ -363,7 +364,7 @@ su vagrant -c "install"
 
 # start gdm
 gdm=`dpkg -l gdm | tail -n 1 | cut -d " " -f1`
-gdmStatus=`service gdm status | cut-d " " -f2`
+gdmStatus=`service gdm status | cut -d " " -f2`
 [[ $gdm == "ii" ]] && [[ $gdmStatus != "start/running" ]] && service gdm start
 
 # Mark as bootstrapped
