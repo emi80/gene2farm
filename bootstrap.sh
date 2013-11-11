@@ -57,14 +57,14 @@ install() {
 
   log "Install missing packages"
   sudo apt-get update --fix-missing &> $systemLog
-  sudo apt-get install -y vim cmake make g++ git unzip gettext wget curl python-software-properties libncurses5-dev libncursesw5-dev &> $systemLog
+  sudo apt-get install -y vim cmake make g++ git unzip gettext wget curl python-software-properties x11-apps nano nedit libncurses5-dev libncursesw5-dev &> $systemLog
 
 
   # Update bash to fix the direxpand issue
 
   log "Update bash to v4.2.45"
   cd ~/soft
-  git clone git://git.sv.gnu.org/bash.git &> $bashLog
+  git clone https://git.sv.gnu.org/bash.git &> $bashLog
   cd bash
   ./configure --prefix="/" &> $bashLog
   make &> $bashLog

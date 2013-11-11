@@ -6,11 +6,18 @@ The repository contains the Vagrant configuration files for the VM of the course
 Requirements
 ------------
 
+The virtual machine can only run on a **64bit compatible** system since most of the tools require 64bit instructions and therefore are compiled for this architecture.
+
+If you are on Microsoft Windows and want to check if your machine 64bit capabilities, please have a look at `this post <http://superuser.com/questions/251014/how-to-check-whether-my-hardware-is-64-bit-capable-in-windows>`_.
+
 To use the virtual machine the following tools are needed:
 
 - Oracle VirtualBox - https://www.virtualbox.org/wiki/Downloads
 
 - Vagrant - http://docs.vagrantup.com/v2/installation/index.html
+
+- If you are on a Mac or linux just check if you have git installed.
+  For Windows users: you need Git with ssh - http://git-scm.com/downloads
 
 
 VM installation
