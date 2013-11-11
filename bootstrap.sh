@@ -128,7 +128,7 @@ install() {
     tar xf BEDTools.v2.17.0.tar.gz && rm BEDTools.v2.17.0.tar.gz
     cd bedtools-2.17.0
     make &> $bedtoolsLog
-    printf '\nexport PATH=$HOME/soft/bedtools-2.17.0:$PATH\n' >> ~/.bashrc
+    printf '\nexport PATH=$HOME/soft/bedtools-2.17.0/bin:$PATH\n' >> ~/.bashrc
   fi
 
 
@@ -198,7 +198,7 @@ install() {
     cd ~/soft
     wget -q http://www.ebi.ac.uk/~guy/exonerate/exonerate-2.2.0-x86_64.tar.gz
     tar xf exonerate-2.2.0-x86_64.tar.gz && rm exonerate-2.2.0-x86_64.tar.gz
-    printf '\nexport PATH=$HOME/soft/exonerate-2.2.0-x86_64:$PATH\n' >> ~/.bashrc
+    printf '\nexport PATH=$HOME/soft/exonerate-2.2.0-x86_64/bin:$PATH\n' >> ~/.bashrc
   fi
 
 
@@ -305,7 +305,7 @@ install() {
     tar xf tagdust.tgz && rm tagdust.tgz
     cd tagdust
     make &> $tagdustLog
-    printf '\nexport PATH=$HOME/tagdust:$PATH\n' >> ~/.bashrc
+    printf '\nexport PATH=$HOME/soft/tagdust:$PATH\n' >> ~/.bashrc
   fi
 
 
