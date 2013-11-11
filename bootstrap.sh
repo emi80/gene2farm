@@ -345,6 +345,11 @@ install() {
 
 }
 
+if [[ $1 == "reset" ]]; then
+  log "Reset bootstrapping"
+  rm /etc/bootstrapped
+fi
+
 # Exit if already bootstrapped.
 test -f /etc/bootstrapped && exit
 

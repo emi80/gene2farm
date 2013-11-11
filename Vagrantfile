@@ -25,6 +25,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   # provisioninig
-  config.vm.provision :shell, :path => "bootstrap.sh"
-
+  config.vm.provision "shell" do |s|
+      s.path = "bootstrap.sh"
+      # Uncomment this to force re-bootstrapping
+      # s.args = "'reset'"
+  end
 end
