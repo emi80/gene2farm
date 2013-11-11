@@ -64,7 +64,7 @@ install() {
 
   log "Update bash to v4.2.45"
   cd ~/soft
-  git clone git://git.sv.gnu.org/bash.git &> $bashLog
+  git clone http://git.savannah.gnu.org/r/bash.git &> $bashLog
   cd bash
   ./configure --prefix="/" &> $bashLog
   make &> $bashLog
