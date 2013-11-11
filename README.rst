@@ -32,6 +32,40 @@ Once you have all the required dependencies you can install the machine::
 The configuration of the VM and the installation of all the software will take approximately half an hour, depending on your internet connection speed and your computer specifications. However, this is a one-time step that does only need to be repeated if you remove the machine (see below).
 
 
+Updating VirtualBox Guest Additions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If the versions of VirtualBox and VirtualBox Guest additions do not match you can get a message like the following::
+
+    [default] The guest additions on this VM do not match the installed version of VirtualBox!" In most cases this is fine, but in rare cases it can cause things such as shared folders to not work properly. If you see shared folder errors, please update the guest additions within the virtual machine and reload your VM.
+
+If you get this message run the following commands::
+
+    vagrant plugin install vagrant-vbguest
+
+This will install the Vagrant vbguest plugin which will take care of keeping VirtualBox Guest Additions updated. Then run the following command to reboot the machine and make the plugin do its work::
+
+    vagrant reload
+
+Since the VM has no graphical interface installed, you can safely ignore this message::
+
+    Installing the Window System drivers ...fail!
+    (Could not find the X.Org or XFree86 Window System.)
+    An error occurred during installation of VirtualBox Guest Additions 4.3.2. Some functionality may not work as intended.
+
+You then need to reboot the machine to apply the new Guest Additions::
+
+    vagrant reload
+
+The output of the command will be something like::
+
+    ...
+    [default] Booting VM...
+    GuestAdditions 4.3.2 running --- OK.
+    [default] Waiting for machine to boot. This may take a few minutes...
+    ....
+
+
 VM Usage
 --------
 
