@@ -358,7 +358,8 @@ su vagrant -c "install"
 
 # start gdm
 gdm=`dpkg -l gdm | tail -n 1 | cut -d " " -f1`
-[[ $gdm == "ii" ]] && service gdm start
+gdmStatus=`service gdm status | cut-d " " -f2`
+[[ $gdm == "ii" ]] && [[ $gdmStatus != "start/running" ]] && service gdm start
 
 # Mark as bootstrapped
 date > /etc/bootstrapped
