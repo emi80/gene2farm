@@ -69,9 +69,9 @@ install() {
 
   if [[ ! `grep "service gdm start" /etc/rc.local` ]]; then
     log "Install Xfce 4"
-    sudo apt-get install -y xfce4 elementary-icon-theme gdm &> $systemLog
+    sudo apt-get install -y xfce4 xfce4-terminal elementary-icon-theme gdm &> $systemLog
     sudo apt-get update --fix-missing &> $systemLog
-    sudo apt-get install -y xfce4 elementary-icon-theme gdm &> $systemLog
+    sudo apt-get install -y xfce4 xfce4-terminal elementary-icon-theme gdm &> $systemLog
     sudo sed -i 's/^exit 0$/service gdm start\nexit 0/g' /etc/rc.local
   fi
 
