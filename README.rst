@@ -6,7 +6,7 @@ The repository contains the Vagrant configuration files for the VM of the course
 Requirements
 ------------
 
-The virtual machine can only run on a **64bit compatible** system since most of the tools require 64bit instructions and therefore are compiled for this architecture. 
+The virtual machine can only run on a **64bit compatible** system since most of the tools require 64bit instructions and therefore are compiled for this architecture.
 
 If you are on Microsoft Windows and want to check if your machine 64bit capabilities, please have a look at `this post <http://superuser.com/questions/251014/how-to-check-whether-my-hardware-is-64-bit-capable-in-windows>`_.
 
@@ -29,7 +29,7 @@ Once you have all the required dependencies you can install the machine::
     cd gene2farm
     vagrant up
 
-The configuration of the VM and the installation of all the software will take approximately half an hour, depending on your internet connection speed and your computer specifications. However, thi is a one-time step that does only need to be repeated if you remove the machine (see below).
+The configuration of the VM and the installation of all the software will take approximately half an hour, depending on your internet connection speed and your computer specifications. However, this is a one-time step that does only need to be repeated if you remove the machine (see below).
 
 
 VM Usage
