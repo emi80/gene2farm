@@ -16,9 +16,14 @@ install() {
 
   # Create installation folders
 
-  log "Create installation folders"
-  mkdir $HOME/soft && cd $HOME/soft
-  mkdir -p $HOME/soft/logs
+  if [ ! -d $HOME/soft ]; then
+    log "Create installation folder"
+    mkdir $HOME/soft && cd $HOME/soft
+  fi
+  if [ ! -d $HOME/soft/logs ]; then
+    log "Create log folder"
+    mkdir -p $HOME/soft/logs
+  fi
 
 
   # Define log folder and files
