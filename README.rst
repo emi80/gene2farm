@@ -31,8 +31,8 @@ Once you have all the required dependencies you can install the machine::
 
 The configuration of the VM and the installation of all the software will take approximately half an hour, depending on your internet connection speed and your computer specifications. However, this is a one-time step that does only need to be repeated if you remove the machine (see below).
 
-VirtualBox Guest Additions version mismatch
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Updating VirtualBox Guest Additions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If the versions of VirtualBox and VirtualBox Guest additions do not match you can get a message like the following::
 
