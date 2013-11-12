@@ -71,7 +71,8 @@ install() {
     log "Install Xfce 4"
     sudo apt-get install -y lightdm &> $systemLog
     sudo /usr/lib/lightdm/lightdm-set-defaults -s xfce
-    sudo apt-get install -y xfce4 xfce4-terminal elementary-icon-theme &> $systemLog
+    sudo apt-get install -y xfce4 &> $systemLog
+    sudo apt-get install -y elementary-icon-theme xfce4-terminal &> $systemLog
   fi
 
 
