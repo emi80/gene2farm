@@ -67,7 +67,7 @@ install() {
 
   # Install xfce4
 
-  if [[ ! `grep "service gdm start" /etc/rc.local` ]]; then
+  if [[ ! `grep "service lightdm start" /etc/rc.local` ]]; then
     log "Install Xfce 4"
     sudo apt-get install -y lightdm &> $systemLog
     sudo /usr/lib/lightdm/lightdm-set-defaults -s xfce
