@@ -69,10 +69,9 @@ install() {
 
   if [[ ! `grep "service gdm start" /etc/rc.local` ]]; then
     log "Install Xfce 4"
-    sudo apt-get install -y xfce4 xfce4-terminal elementary-icon-theme gdm &> $systemLog
-    sudo apt-get update --fix-missing &> $systemLog
-    sudo apt-get install -y xfce4 xfce4-terminal elementary-icon-theme gdm &> $systemLog
-    sudo sed -i 's/^exit 0$/service gdm start\nexit 0/g' /etc/rc.local
+    sudo apt-get install -y xfce4 xfce4-terminal elementary-icon-theme &> $systemLog
+    sudo apt-get install -y lightdm &> $systemLog
+    sudo /usr/lib/lightdm/lightdm-set-defaults -s xfce
   fi
 
 
@@ -363,9 +362,9 @@ export -f log
 su vagrant -c "install"
 
 # start gdm
-gdm=`dpkg -l gdm | tail -n 1 | cut -d " " -f1`
-gdmStatus=`service gdm status | cut -d " " -f2`
-[[ $gdm == "ii" ]] && [[ $gdmStatus != "start/running" ]] && service gdm start
+ldm=`dpkg -l lightdm | tail -n 1 | cut -d " " -f1`
+ldmStatus=`service gdm status | cut -d " " -f2`
+[[ $ldm == "ii" ]] && [[ $ldmStatus != "start/running" ]] && service lightdm start
 
 # Mark as bootstrapped
 date > /etc/bootstrapped
