@@ -21,12 +21,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # virtualbox custom configuration
   config.vm.provider :virtualbox do |vb|
       vb.customize ["modifyvm", :id, "--cpus", "1"]
-      vb.customize ["modifyvm", :id, "--memory", "2048"]
-      vb.customize ["modifyvm", :id, "--vram", "16"]
+      vb.customize ["modifyvm", :id, "--memory", "1024"]
+      vb.customize ["modifyvm", :id, "--vram", "8"]
   end
 
   # provisioninig
-    config.vm.provision "shell" do |s|
+  config.vm.provision "shell" do |s|
       s.path = "bootstrap.sh"
       # Uncomment this to force re-bootstrapping
       # s.args = "'reset'"
