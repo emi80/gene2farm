@@ -169,16 +169,8 @@ Windows
 ~~~~~~~
 
 1. Install `Xming <http://www.straightrunning.com/XmingNotes>`_.
-2. Install `Putty <http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html>`_.
+2. On the ``git bash`` shell type::
 
-.. 3. Open XLaunch and select the following options:
-..     - Multiple windows -> Next
-..     - Start no client -> Next
-..     - Tick Clipboard in additional parameters -> Next
-..     - FInish
-.. 4. Open Putty and connect with the following parameters:
-..     - hostname: 127.0.0.1
-..     - port: 2222
-..     - username: vagrant
-..     - password: vagrant
-..     - select SSH -> X11 and enable **X11 forwarding** 
+    export DISPLAY=localhost:0.0
+
+3. connecto to the VM through ``vagrant ssh``   
