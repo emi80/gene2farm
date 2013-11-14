@@ -148,10 +148,10 @@ OSX
 ~~~
 
 1. Install `XQuartz <http://xquartz.macosforge.org>`_. You can skip this if you are on OSX version up to 10.5.
-2. Go to Applications -> Utilities
-3. Launch the X11 app
-4. Click on the Applications menu -> Terminal to open a new terminal window
-5. Work from there
+2. Go to Applications -> Utilities.
+3. Launch the X11 app.
+4. Click on the Applications menu -> Terminal to open a new terminal window.
+5. Work from there.
 
 
 Windows
