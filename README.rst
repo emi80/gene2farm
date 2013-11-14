@@ -116,27 +116,27 @@ The VM is configured by default with 1 cpu, 2G of ram and 16M of video memory. Y
 Further information on how to configure the virtualbox provider for Vagrant can be found `here <http://docs.vagrantup.com/v2/virtualbox/configuration.html>`_.
 
 
-Using a shared folder between the host and the VM
--------------------------------------------------
+.. Using a shared folder between the host and the VM
+.. -------------------------------------------------
 
-The Vagrantfile already containes a line to configure a shared folder between the VM and the host machine. The configuration points to a ``data`` folder within the current folder in the host machine and creates a ``/data`` folder in the VM. 
+.. The Vagrantfile already containes a line to configure a shared folder between the VM and the host machine. The configuration points to a ``data`` folder within the current folder in the host machine and creates a ``/data`` folder in the VM. 
 
-The line is commented and looks like::
+.. The line is commented and looks like::
 
-.. code-block:: ruby
+.. .. code-block:: ruby
 
-    # shared folders
-    # config.vm.synced_folder "data", "/data"
+..     # shared folders
+..     # config.vm.synced_folder "data", "/data"
 
-Just uncomment the second line to enable the shared folder. To apply the configuraton to the VM run::
+.. Just uncomment the second line to enable the shared folder. To apply the configuraton to the VM run::
 
-    vagrant up
+..     vagrant up
 
-if the VM was stopped. Or::
+.. if the VM was stopped. Or::
 
-    vagrant reload
+..     vagrant reload
 
-if the VM was running.
+.. if the VM was running.
 
 
 Using X applications
@@ -158,5 +158,15 @@ Windows
 ~~~~~~~
 
 1. Install `Xming <http://www.straightrunning.com/XmingNotes>`_
-
-    Rest of instructions coming soon
+2. Install `Putty <http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html>`_
+3. Open XLaunch and select the following options in the dialog:
+    - Multiple windows -> next
+    - Start no client -> next
+    - Tick Clipboard in additional parameters -> next
+    - FInish
+4. Open Putty and connect with the following paramters:
+    - hostname: 127.0.0.1
+    - port: 2222
+    - username: vagrant
+    - password: vagrant
+    - select SSH -> X11 and enable **X11 forwarding** 
