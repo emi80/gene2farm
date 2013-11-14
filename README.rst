@@ -144,8 +144,8 @@ Getting the course data
 
 To download the data and exercise files used during the course you can run the following commands inside the VM::
 
-    wget ...
-    tar xf ...
+    wget http://genome.crg.es/~epalumbo/gene2farm/ex_1_2.tar.gz
+    tar xf ex_1_2.tar.gz
 
 After that You will find a ``data`` folder in your current path, containing all the files. 
 
