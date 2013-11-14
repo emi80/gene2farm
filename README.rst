@@ -159,6 +159,7 @@ Windows
 
 1. Install `Xming <http://www.straightrunning.com/XmingNotes>`_.
 2. Install `Putty <http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html>`_.
+
 .. 3. Open XLaunch and select the following options:
 ..     - Multiple windows -> Next
 ..     - Start no client -> Next
