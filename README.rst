@@ -139,6 +139,17 @@ if the VM was stopped. Or::
 if the VM was running.
 
 
+Getting the course data
+-----------------------
+
+To download the data and exercise files used during the course you can run the following commands inside the VM::
+
+    wget ...
+    tar xf ...
+
+After that You will find a ``data`` folder in your current path, containing all the files. 
+
+
 Using X applications
 --------------------
 
