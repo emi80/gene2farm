@@ -7,6 +7,7 @@ The onliner...
 
 ...better explained
 -------------------
+
 .. code-block:: bash
     
     awk 'BEGIN { 
