@@ -159,12 +159,15 @@ Windows
 
 1. Install `Xming <http://www.straightrunning.com/XmingNotes>`_
 2. Install `Putty <http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html>`_
-3. Open XLaunch and select the following options
+3. Open XLaunch and select the following options:
+
     - Multiple windows -> next
     - Start no client -> next
     - Tick Clipboard in additional parameters -> next
     - FInish
-4. Open Putty and connect with the following parameters
+
+4. Open Putty and connect with the following parameters:
+
     - hostname: 127.0.0.1
     - port: 2222
     - username: vagrant
