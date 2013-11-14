@@ -161,15 +161,15 @@ Windows
 2. Install `Putty <http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html>`_
 3. Open XLaunch and select the following options:
 
-- Multiple windows -> next
-- Start no client -> next
-- Tick Clipboard in additional parameters -> next
-- FInish
+    a. Multiple windows -> next
+    b. Start no client -> next
+    c. Tick Clipboard in additional parameters -> next
+    d. FInish
 
 4. Open Putty and connect with the following parameters:
 
-- hostname: 127.0.0.1
-- port: 2222
-- username: vagrant
-- password: vagrant
-- select SSH -> X11 and enable **X11 forwarding** 
+    a. hostname: 127.0.0.1
+    b. port: 2222
+    c. username: vagrant
+    d. password: vagrant
+    e. select SSH -> X11 and enable **X11 forwarding** 
