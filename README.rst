@@ -169,8 +169,9 @@ Windows
 ~~~~~~~
 
 1. Install `Xming <http://www.straightrunning.com/XmingNotes>`_.
-2. On the ``git bash`` shell type::
+2. Run XLaunch if it is not already running.
+3. On the ``git bash`` shell type::
 
     export DISPLAY=localhost:0.0
 
-3. connecto to the VM through ``vagrant ssh``   
+4. connecto to the VM through ``vagrant ssh``   
