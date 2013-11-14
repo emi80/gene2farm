@@ -128,7 +128,7 @@ The line is commented and looks like::
     # shared folders
     # config.vm.synced_folder "data", "/data"
 
-Just uncomment the second line to enable the shared folder. To apply the configuraton to the VM run::
+First crate a ``data`` folder in the VM folder. Then uncomment the last line above in your Vagrantfile to enable the shared folder. To apply the configuraton to the VM run::
 
     vagrant up
 
