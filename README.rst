@@ -116,6 +116,29 @@ The VM is configured by default with 1 cpu, 2G of ram and 16M of video memory. Y
 Further information on how to configure the virtualbox provider for Vagrant can be found `here <http://docs.vagrantup.com/v2/virtualbox/configuration.html>`_.
 
 
+Using a shared folder between the host and the VM
+-------------------------------------------------
+
+The Vagrantfile already containes a line to configure a shared folder between the VM and the host machine. The configuration points to a ``data`` folder within the current folder in the host machine and creates a ``/data`` folder in the VM. 
+
+The line is commented and looks like::
+
+.. code-block:: ruby
+
+    # shared folders
+    # config.vm.synced_folder "data", "/data"
+
+Just uncomment the second line to enable the shared folder. To apply the configuraton to the VM run::
+
+    vagrant up
+
+if the VM was stopped. Or::
+
+    vagrant reload
+
+if the VM was running.
+
+
 Using X applications
 --------------------
 
